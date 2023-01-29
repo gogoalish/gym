@@ -2,4 +2,4 @@
 
 run program
     
-    go run cmd/main.go
+    go run cmd/forum/main.go

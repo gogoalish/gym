@@ -1,11 +1,10 @@
 {
-    "server" : {
-        "port" : 8080
-
-    },
-    "path" : {
-      "db" : "", 
-      "static" : "", 
-      "template" : "" 
-    }
+  "server": {
+      "port": ":8080"
+  },
+  "path": {
+      "db": "./db/forum.db",
+      "template": "./ui/template/",
+      "static": "./ui/static"
+  }
 }

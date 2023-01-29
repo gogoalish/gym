@@ -5,20 +5,33 @@ import (
 	"os"
 )
 
-type path struct {
-	Template string
+const CONFIG_FILE_NAME = "./config/config.json"
+
+// write config
+type Config struct {
+	Server struct {
+		Port string `json:"port"`
+	} `json:"server"`
+	Path struct {
+		DB       string `json:"db"`
+		Template string `json:"template"`
+		Static   string `jsin:"static"`
+	} `json:"path"`
 }
 
-type config struct {
-	P path
-}
+// Global config.
+var C Config
 
-var C config
-
+// Write config.
 func ReadConfig() error {
-	file, err := os.ReadFile("/config/config.json")
+	// t := http.Server{
+	// 	WriteTimeout:   1,
+	// 	ReadTimeout:    1,
+	// 	MaxHeaderBytes: 1,
+	// }
+	data, err := os.ReadFile(CONFIG_FILE_NAME)
 	if err != nil {
 		return err
 	}
-	return json.Unmarshal(file, &C)
+	return json.Unmarshal(data, &C)
 }

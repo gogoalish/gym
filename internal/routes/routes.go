@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"net/http"
 
-	"project/config"
 	"project/internal/handlers"
 	_authhandlers "project/internal/handlers/auth"
 
@@ -19,7 +18,7 @@ const (
 )
 
 func InitRoutes(db *sql.DB, mux *http.ServeMux) error {
-	err := handlers.ReadTemplate(config.C.P.Template)
+	err := handlers.ReadTemplate("")
 	if err != nil {
 		return err
 	}
@@ -32,8 +31,6 @@ func InitRoutes(db *sql.DB, mux *http.ServeMux) error {
 	mux.HandleFunc(LogIn, authHandlers.LogIn)
 	mux.HandleFunc(LogOut, authHandlers.LogOut)
 	mux.HandleFunc(SignUp, authHandlers.SignUp)
-
-	
 
 	mux.Handle("", middleware.PanicRecover(mux))
 	return nil

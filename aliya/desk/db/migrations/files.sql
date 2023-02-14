@@ -1,0 +1,9 @@
+CREATE TABLE files (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name INTEGER NOT NULL,
+    created DATETIME NOT NULL,
+    content_type VARCHAR(64) NOT NULL,
+    size INTEGER NOT NULL,
+    task_id INTEGER NOT NULL,
+    FOREIGN KEY (task_id) REFERENCES tasks(id)
+);

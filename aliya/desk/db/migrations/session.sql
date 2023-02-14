@@ -1,0 +1,5 @@
+CREATE TABLE session (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    session TEXT NOT NULL UNIQUE,
+    session_end_time TEXT NOT NULL
+);

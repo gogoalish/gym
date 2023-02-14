@@ -1,0 +1,4 @@
+CREATE TABLE task_statuses (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(64) NOT NULL
+);

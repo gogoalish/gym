@@ -1,0 +1,6 @@
+CREATE TABLE projects (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title VARCHAR(64) NOT NULL,
+    description VARCHAR(64),
+    created DATETIME NOT NULL
+);

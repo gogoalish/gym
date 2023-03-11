@@ -1,0 +1,24 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5000,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "database": "greenlight",
+            "username": "greenlight",
+            "name": "postgreConnection"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5000,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "name": "rootConnection",
+            "database": "greenlight",
+            "username": "postgres"
+        }
+    ]
+}
